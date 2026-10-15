@@ -91,9 +91,6 @@ public class TestConfig implements CommandLineRunner{
         Order o2 = new Order(null, Instant.parse("2026-07-06T03:52:27Z"), OrderStatus.DELIVERED,u2);
         Order o3 = new Order(null, Instant.parse("2026-07-08T21:06:01Z"), OrderStatus.CANCELED,u3);
         
-        
-        
-        
         userRepository.saveAll(Arrays.asList(u1, u2, u3));
         orderRepository.saveAll(Arrays.asList(o1, o2, o3));
 		
