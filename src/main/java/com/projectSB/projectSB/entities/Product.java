@@ -96,12 +96,10 @@ public class Product implements Serializable {
 	}
 	
 	@JsonIgnore
-	public Set<Order> getOrders(){
-		Set<Order> set = new HashSet<>();
-		for(OrderItem x : items) {
-			set.add(x.getOrder());
-		}
-		return set;
+	public Set<Order> getOrders() {
+	    return items.stream()
+	                .map(OrderItem::getOrder)
+	                .collect(java.util.stream.Collectors.toSet());
 	}
 
 	@Override
